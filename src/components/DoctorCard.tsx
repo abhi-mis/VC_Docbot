@@ -35,26 +35,15 @@ export function DoctorCard({ doctor, onCall }: DoctorCardProps) {
         className="relative z-10"
       >
         <div className="absolute right-0 top-0 flex items-center gap-2">
-          <motion.div
-            animate={{
-              scale: doctor.isOnline ? [1, 1.2, 1] : 1,
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 backdrop-blur-lg"
-          >
-            <span className="text-xs font-medium text-white/80">
+          {/* <div className="flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 backdrop-blur-lg"> */}
+            <span className="text-xs font-small text-white/80">
               {doctor.isOnline ? 'Available Now' : 'Offline'}
             </span>
             <span className={cn(
               "flex h-3 w-3 rounded-full",
-              doctor.isOnline ? "bg-emerald-500" : "bg-red-500",
-              doctor.isOnline && "animate-pulse"
+              doctor.isOnline ? "bg-emerald-500" : "bg-red-500"
             )} />
-          </motion.div>
+          {/* </div> */}
         </div>
 
         <div className="flex items-center gap-4">
